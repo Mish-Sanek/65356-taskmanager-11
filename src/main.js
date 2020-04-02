@@ -1,5 +1,3 @@
-"use strict";
-
 const TASK_COUNT = 3;
 
 const createSiteMenuTemplate = () => {
@@ -369,25 +367,25 @@ const createLoadMoreButtonTemplate = () => {
   );
 };
 
-const render = (container, template, place) => {
+const render = (container, template, place = `beforeend`) => {
   container.insertAdjacentHTML(place, template);
 };
 
-const appMain = document.querySelector('.main');
-const appHeader= appMain.querySelector('.main__control');
+const appMain = document.querySelector(`.main`);
+const appHeader= appMain.querySelector(`.main__control`);
 
 
-render(appHeader, createSiteMenuTemplate(), 'beforeend');
-render(appMain, createFilterTemplate(), 'beforeend');
-render(appMain, createBoardTemplate(), 'beforeend');
+render(appHeader, createSiteMenuTemplate());
+render(appMain, createFilterTemplate());
+render(appMain, createBoardTemplate());
 
-const boardBlock = appMain.querySelector('.board');
-const taskListBlock = appMain.querySelector('.board__tasks');
+const boardBlock = appMain.querySelector(`.board`);
+const taskListBlock = appMain.querySelector(`.board__tasks`);
 
-render(taskListBlock, createTaskEditTemplate(), `beforeend`);
+render(taskListBlock, createTaskEditTemplate());
 
 for (let i = 0; i < TASK_COUNT; i++) {
-  render(taskListBlock, createTaskTemplate(), `beforeend`);
+  render(taskListBlock, createTaskTemplate());
 }
 
-render(boardBlock, createLoadMoreButtonTemplate(), `beforeend`);
+render(boardBlock, createLoadMoreButtonTemplate());
