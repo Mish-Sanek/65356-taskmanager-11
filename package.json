@@ -6,6 +6,7 @@
   "scripts": {
     "eslint": "eslint src/**/*.js",
     "test": "npm run eslint",
+    "lint": "eslint --fix --ext .js,.jsx .",
     "build": "webpack",
     "start": "webpack-dev-server --open"
   },

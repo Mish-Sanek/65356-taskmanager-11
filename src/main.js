@@ -4,12 +4,9 @@ import {createBoardTemplate} from './components/board.js';
 import {createTaskEditTemplate} from './components/task-edit.js';
 import {createTaskTemplate} from './components/task.js';
 import {createLoadMoreButtonTemplate} from './components/load-more-btn.js';
+import {render} from './components/utils.js';
 
 const TASK_COUNT = 3;
-
-const render = (container, template, place = `beforeend`) => {
-  container.insertAdjacentHTML(place, template);
-};
 
 const appMain = document.querySelector(`.main`);
 const appHeader = appMain.querySelector(`.main__control`);
